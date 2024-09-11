@@ -10,10 +10,10 @@ O Prometheus e o Grafana foram implantados como parte do monitoramento do ambien
 
 - **Prometheus**: Inicialmente, o serviço estava configurado como ClusterIP, dificultando o acesso externo. Foi alterado para NodePort, permitindo acessibilidade externa.
 - **Grafana**: Volumes foram adicionados para persistir dados e manter configurações entre recriações de pods. Isso otimiza a continuidade das operações em caso de reinicialização.
-- **Dockerfile**: Implementado o build da aplicação via GitHub Actions e configurado o envio da imagem para o GitHub Container Registry (GHCR).
-- **Pipeline CI/CD**: A pipeline foi configurada para construir a imagem da aplicação e realizar o deploy em um cluster Kubernetes, além de incluir a autenticação com o GHCR via GitHub Actions.
+- **Dockerfile**: Implementado o build da aplicação via GitHub Actions e configurado o envio da imagem para o Docker Hub devido a problemas de autenticação com o GitHub Container Registry (GHCR).
+- **Pipeline CI/CD**: A pipeline foi configurada para construir a imagem da aplicação e realizar o deploy em um cluster Kubernetes. O Docker Hub foi utilizado para o armazenamento da imagem, e ajustes serão feitos para alterar a imagem para um repositório privado e resolver o problema de autenticação para futuras melhorias.
 
-## Dificuldades Adicionais
+## Dificuldades Iniciais
 
 Uma das maiores dificuldades enfrentadas foi o fato de não ter trabalhado previamente com Kubernetes. O processo de mapeamento dos nós foi desafiador, especialmente para garantir que os nós do cluster fossem identificados corretamente e atribuídos para a execução das funções desejadas (master e workers). Além disso, o uso do NodePort para expor a aplicação fora dos pods foi essencial para garantir acessibilidade externa, mas apresentou algumas dificuldades iniciais no mapeamento correto de portas e IPs no ambiente distribuído.
 

@@ -1,6 +1,6 @@
 [master]
-node01 ansible_host=52.22.116.197 ansible_user=admin ansible_ssh_private_key_file=~/.ssh/id_rsa
+node01 ansible_host=34.94.242.168 ansible_user=4linux ansible_ssh_private_key_file=~/.ssh/id_rsa
 
 [agents]
-node02 ansible_host=44.209.89.62 ansible_user=admin ansible_ssh_private_key_file=~/.ssh/id_rsa
-node03 ansible_host=44.199.80.153 ansible_user=admin ansible_ssh_private_key_file=~/.ssh/id_rsa
+node02 ansible_host=34.94.136.0 ansible_user=4linux ansible_ssh_private_key_file=~/.ssh/id_rsa
+node03 ansible_host=35.236.23.17 ansible_user=4linux ansible_ssh_private_key_file=~/.ssh/id_rsa
