@@ -31,9 +31,6 @@ jobs:
       - name: Run Ansible Playbook
         run: ansible-playbook -i ansible/inventory ansible/setup-k3s.yml
 
-      - name: Checkout code
-        uses: actions/checkout@v3
-
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
