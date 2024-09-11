@@ -5,7 +5,7 @@ metadata:
   labels:
     app: grafana
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: grafana
@@ -19,19 +19,6 @@ spec:
           image: grafana/grafana
           ports:
             - containerPort: 3000
-          volumeMounts:
-            - name: grafana-storage
-              mountPath: /var/lib/grafana
-            - name: grafana-config
-              mountPath: /etc/grafana/grafana.ini
-              subPath: custom.ini
-      volumes:
-        - name: grafana-storage
-          persistentVolumeClaim:
-            claimName: grafana-storage
-        - name: grafana-config
-          configMap:
-            name: grafana-config
 ---
 apiVersion: v1
 kind: Service
