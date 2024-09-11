@@ -1,0 +1,303 @@
+server:
+  port: 3000
+  basePath: ''
+application:
+  domain: Coffee-sh.op
+  name: 'OWASP Coffee Shop'
+  logo: CoffeeShop_Logo.png
+  favicon: favicon_js.ico
+  theme: bluegrey-lightgreen # Options: bluegrey-lightgreen blue-lightblue deeppurple-amber indigo-pink pink-bluegrey purple-green deeporange-indigo
+  showVersionNumber: true
+  showGitHubLinks: true
+  localBackupEnabled: true
+  numberOfRandomFakeUsers: 0
+  altcoinName: Juicycoin
+  privacyContactEmail: donotreply@owasp-Coffee.shop
+  customMetricsPrefix: Coffeeshop
+  chatBot:
+    name: 'Juicy'
+    greeting: "Nice to meet you <customer-name>, I'm <bot-name>"
+    trainingData: 'botDefaultTrainingData.json'
+    defaultResponse: "Sorry I couldn't understand what you were trying to say"
+    avatar: 'JuicyChatBot.png'
+  social:
+    twitterUrl: 'https://twitter.com/owasp_Coffeeshop'
+    facebookUrl: 'https://www.facebook.com/owasp.Coffeeshop'
+    slackUrl: 'https://owasp.org/slack/invite'
+    redditUrl: 'https://www.reddit.com/r/owasp_Coffeeshop'
+    pressKitUrl: 'https://github.com/OWASP/owasp-swag/tree/master/projects/Coffee-shop'
+    nftUrl: 'https://opensea.io/collection/Coffee-shop'
+    questionnaireUrl: ~
+  recyclePage:
+    topProductImage: fruit_press.jpg
+    bottomProductImage: apple_pressings.jpg
+  welcomeBanner:
+    showOnFirstStart: true
+    title: 'Welcome to OWASP Coffee Shop!'
+    message: "<p>Being a web application with a vast number of intended security vulnerabilities, the <strong>OWASP Coffee Shop</strong> is supposed to be the opposite of a best practice or template application for web developers: It is an awareness, training, demonstration and exercise tool for security risks in modern web applications. The <strong>OWASP Coffee Shop</strong> is an open-source project hosted by the non-profit <a href='https://owasp.org' target='_blank'>Open Web Application Security Project (OWASP)</a> and is developed and maintained by volunteers. Check out the link below for more information and documentation on the project.</p><h1><a href='https://owasp-Coffee.shop' target='_blank'>https://owasp-Coffee.shop</a></h1>"
+  cookieConsent:
+    backgroundColor: '#546e7a'
+    textColor: '#ffffff'
+    buttonColor: '#558b2f'
+    buttonTextColor: '#ffffff'
+    message: 'This website uses fruit cookies to ensure you get the juiciest tracking experience.'
+    dismissText: 'Me want it!'
+    linkText: 'But me wait!'
+    linkUrl: 'https://www.youtube.com/watch?v=9PnbKL3wuH4'
+  securityTxt:
+    contact: 'mailto:donotreply@owasp-Coffee.shop'
+    encryption: 'https://keybase.io/bkimminich/pgp_keys.asc?fingerprint=19c01cb7157e4645e9e2c863062a85a8cbfbdcda'
+    acknowledgements: '/#/score-board'
+    hiring: '/#/jobs'
+  promotion:
+    video: owasp_promo.mp4
+    subtitles: owasp_promo.vtt
+  easterEggPlanet:
+    name: Orangeuze
+    overlayMap: orangemap2k.jpg
+  googleOauth:
+    clientId: '1005568560502-6hm16lef8oh46hr2d98vf2ohlnj4nfhq.apps.googleusercontent.com'
+    authorizedRedirects:
+      - { uri: 'https://demo.owasp-Coffee.shop' }
+      - { uri: 'https://Coffee-shop.herokuapp.com' }
+      - { uri: 'https://preview.owasp-Coffee.shop' }
+      - { uri: 'https://Coffee-shop-staging.herokuapp.com' }
+      - { uri: 'https://Coffee-shop.wtf' }
+      - { uri: 'http://localhost:3000', proxy: 'https://local3000.owasp-Coffee.shop' }
+      - { uri: 'http://127.0.0.1:3000', proxy: 'https://local3000.owasp-Coffee.shop' }
+      - { uri: 'http://localhost:4200', proxy: 'https://local4200.owasp-Coffee.shop' }
+      - { uri: 'http://127.0.0.1:4200', proxy: 'https://local4200.owasp-Coffee.shop' }
+      - { uri: 'http://192.168.99.100:3000', proxy: 'https://localmac.owasp-Coffee.shop' }
+      - { uri: 'http://192.168.99.100:4200', proxy: 'https://localmac.owasp-Coffee.shop' }
+      - { uri: 'http://penguin.termina.linux.test:3000', proxy: 'https://localchromeos.owasp-Coffee.shop' }
+      - { uri: 'http://penguin.termina.linux.test:4200', proxy: 'https://localchromeos.owasp-Coffee.shop' }
+challenges:
+  showSolvedNotifications: true
+  showHints: true
+  showMitigations: true
+  codingChallengesEnabled: solved # Options: never  solved  always
+  restrictToTutorialsFirst: false
+  overwriteUrlForProductTamperingChallenge: 'https://owasp.slack.com'
+  xssBonusPayload: '<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/771984076&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>'
+  safetyOverride: false
+  showFeedbackButtons: true
+hackingInstructor:
+  isEnabled: true
+  avatarImage: JuicyBot.png
+  hintPlaybackSpeed: normal # Options: faster fast normal slow slower
+products:
+  -
+    name: 'Espresso Coffee'
+    price: 2.99
+    deluxePrice: 1.99
+    limitPerUser: 5
+    description: 'The all-time classic.'
+    image: espresso_coffee.jpeg
+    reviews:
+      - { text: 'One of my favorites!', author: admin }
+  -
+    name: 'Orange Coffee'
+    description: 'Made from oranges hand-picked by Uncle Dittmeyer.'
+    price: 3.99
+    deluxePrice: 2.49
+    image: orange_coffee.webp
+    reviews:
+      - { text: 'y0ur f1r3wall needs m0r3 musc13', author: uvogin }
+  -
+    name: 'Relax Coffee'
+    description: 'Now with even more exotic flavour.'
+    price: 3.99
+    image: relax_coffee.jpg
+    reviews:
+      - { text: 'I bought it, would buy again. 5/7', author: admin }
+  -
+    name: 'Happy Coffee'
+    description: 'Made from blended Raspberry Pi, water and sugar.'
+    price: 4.99
+    image: happy_coffee.png
+  -
+    name: 'Espress Machine'
+    description: 'Sour but full of vitamins.'
+    price: 99.99
+    deluxePrice: 89.99
+    limitPerUser: 5
+    image: express_machine.jpg
+  -
+    name: 'Professional Espress Machine'
+    description: 'Monkeys love it the most.'
+    price: 150.99
+    image: professional_espress_machine.jpg
+    urlForProductTamperingChallenge: 'https://www.owasp.org/index.php/O-Saft' 
+    reviews:
+      - { text: 'Fry liked it too.', author: bender }
+  -
+    name: 'Surfer Coffee'
+    description: 'Real fans wear it 24/7!'
+    price: 6.49
+    limitPerUser: 5
+    image: surfer_coffee.avif
+    keywordsForPastebinDataLeakChallenge:
+      - hueteroneel
+      - eurogium edule
+  -
+    name: 'Cool Coffee'
+    description: 'For serious Capture-the-Flag heroines only!'
+    price: 10.49
+    image: cool_coffee.jpeg
+    useForChristmasSpecialChallenge: true
+  -
+    name: 'Coffee Sticker (2015/2016 design)'
+    description: 'Die-cut sticker with the official 2015/2016 logo. By now this is a rare collectors item. <em>Out of stock!</em>'
+    price: 1.99
+    image: coffee_sticker.webp
+    deletedDate: '2017-04-28' 
+  -
+    name: 'Coffee Temporary Tattoo'
+    description: 'Get one of these <a href="https://www.stickeryou.com/products/owasp-Coffee-shop/794" target="_blank">temporary tattoos</a> to proudly wear the OWASP Coffee Shop or CTF Extension logo on your skin! If you tweet a photo of yourself with the tattoo, you get a couple of our stickers for free! Please mention <a href="https://twitter.com/owasp_Coffeeshop" target="_blank"><code>@owasp_Coffeeshop</code></a> in your tweet!'
+    price: 14.99
+    image: temporary_tattoo_coffee.jpg
+    reviews:
+      - { text: 'I straight-up gots nuff props fo''these tattoos!', author: rapper }
+  -
+    name: 'OWASP Coffee Shop Mug'
+    description: 'Black mug with regular logo on one side and CTF logo on the other! Your colleagues will envy you!'
+    price: 21.99
+    image: coffee_mug.jpeg
+  -
+    name: 'Musician Coffee'
+    description: 'Looks poisonous but is actually very good for your health! Made from green cabbage, spinach, kiwi and grass.'
+    price: 1.99
+    image: musician_coffee.avif
+    reviews:
+      - { text: 'Fresh out of a replicator.', author: jim }
+  -
+    name: 'Hario V60'
+    description: 'Coffee of the <em>Cydonia oblonga</em> fruit. Not exactly sweet but rich in Vitamin C.'
+    price: 69.99
+    image: v60.jpg
+  -
+    name: 'Moka'
+    description: 'Finest pressings of apples. Allergy disclaimer: Might contain traces of worms. Can be <a href="/#recycle">sent back to us</a> for recycling.'
+    price: 39.89
+    limitPerUser: 5
+    image: moka.jpg
+  -
+    name: 'French Press'
+    description: 'Fruits go in. Coffee comes out. Pomace you can send back to us for recycling purposes.'
+    price: 89.99
+    image: french_press.jpg
+  -
+    name: 'Aeropress'
+    description: 'This rare item was designed and handcrafted in Sweden. This is why it is so incredibly expensive despite its complete lack of purpose.'
+    price: 99.99
+    image: aeropress.gif # Exif metadata contains "OpenSCAD" as subtle hint...
+    fileForRetrieveBlueprintChallenge: CoffeeShop.stl # ...to blueprint file type
+    exifForBlueprintChallenge:
+      - OpenSCAD
+  -
+    name: 'Café Quentin'
+    description: 'Unique masterpiece painted with different kinds of Coffee on 90g/m² lined paper.'
+    price: 2.74
+    quantity: 0
+    image: cafe_quentin.gif
+  -
+    name: 'Iced Coffee'
+    description: 'Your chance to nominate up to three quiet pillars of the OWASP community ends 2017-06-30! <a href="https://www.owasp.org/index.php/WASPY_Awards_2017">Nominate now!</a>'
+    price: 6.03
+    image: iced_coffee.jpg
+    deletedDate: '2017-07-01'
+  -
+    name: 'Corgi in Cappuccino'
+    description: 'Sweet & tasty!'
+    price: 5.99
+    image: corgi_coffee.avif
+  -
+    name: 'Coffee Latte Art'
+    description: 'As the old German saying goes: "Carrots are good for the eyes. Or has anyone ever seen a rabbit with glasses?"'
+    price: 4.99
+    image: coffee_latte_art.avif
+    reviews:
+      - { text: '0 st4rs f0r 7h3 h0rr1bl3 s3cur17y', author: uvogin }
+  -
+    name: 'Ground Coffee'
+    description: '10 sheets of Sweden-themed stickers with 15 stickers on each.'
+    price: 19.1
+    image: ground_coffee.jpg
+    deletedDate: '2017-09-20'
+  -
+    name: 'Coffee Grinder'
+    description: 'The wheels of this bicycle are made from real water melons. You might not want to ride it up/down the curb too hard.'
+    price: 12.50
+    quantity: 3
+    limitPerUser: 1
+    image: coffee_grinder.jpg
+  -
+    name: 'OWASP Snakes and Ladders - Web Applications'
+    description: 'This amazing web application security awareness board game is <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1969196030">available for Tabletop Simulator on Steam Workshop</a> now!'
+    price: 0.01
+    quantity: 8
+    image: snakes_ladders.jpg
+    reviews:
+      - { text: 'Wait for a 10$ Steam sale of Tabletop Simulator!', author: bjoernOwasp }
+  -
+    name: 'OWASP Snakes and Ladders - Mobile Apps'
+    description: 'This amazing mobile app security awareness board game is <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1970691216">available for Tabletop Simulator on Steam Workshop</a> now!'
+    price: 0.01
+    quantity: 0
+    image: snakes_ladders_m.jpg
+    reviews:
+      - { text: "Here yo' learn how tha fuck ta not show yo' goddamn phone on camera!", author: rapper }
+  -
+    name: 'Coffee Shop Adversary Trading Card (Common)'
+    description: 'Common rarity "Coffee Shop" card for the <a href="https://docs.google.com/forms/d/e/1FAIpQLSecLEakawSQ56lBe2JOSbFwFYrKDCIN7Yd3iHFdQc5z8ApwdQ/viewform">Adversary Trading Cards</a> CCG.'
+    price: 2.99
+    deluxePrice: 0.99
+    deletedDate: '2020-11-30'
+    limitPerUser: 5
+    image: ccg_common.png
+    reviews:
+      - { text: "Ooooh, puny human playing Mau Mau, now?", author: bender }
+  -
+    name: 'Coffee Shop Adversary Trading Card (Super Rare)'
+    description: 'Super rare "Coffee Shop" card with holographic foil-coating for the <a href="https://docs.google.com/forms/d/e/1FAIpQLSecLEakawSQ56lBe2JOSbFwFYrKDCIN7Yd3iHFdQc5z8ApwdQ/viewform">Adversary Trading Cards</a> CCG.'
+    price: 99.99
+    deluxePrice: 69.99
+    deletedDate: '2020-11-30'
+    quantity: 2
+    limitPerUser: 1
+    image: ccg_foil.png
+    reviews:
+      - { text: "Mau Mau with bling-bling? Humans are so pathetic!", author: bender }
+  -
+    name: 'Best Coffee Shop Salesman Artwork'
+    description: 'Unique digital painting depicting Stan, our most qualified and almost profitable salesman. He made a succesful carreer in selling used ships, coffins, krypts, crosses, real estate, life insurance, restaurant supplies, voodoo enhanced asbestos and courtroom souvenirs before <em>finally</em> adding his expertise to the Coffee Shop marketing team.'
+    price: 5000
+    quantity: 1
+    image: artwork2.jpg
+    reviews:
+      - { text: "I'd stand on my head to make you a deal for this piece of art.", author: stan }
+      - { text: "Just when my opinion of humans couldn't get any lower, along comes Stan...", author: bender }
+
+memories:
+  -
+    image: 'magn(et)ificent!-1571814229653.jpg'
+    caption: 'Magn(et)ificent!'
+    user: bjoernGoogle
+  -
+    image: 'my-rare-collectors-item!-[̲̅$̲̅(̲̅-͡°-͜ʖ-͡°̲̅)̲̅$̲̅]-1572603645543.jpg'
+    caption: 'My rare collectors item! [̲̅$̲̅(̲̅ ͡° ͜ʖ ͡°̲̅)̲̅$̲̅]'
+    user: bjoernGoogle
+  -
+    image: 'favorite-hiking-place.png'
+    caption: 'I love going hiking here...'
+    geoStalkingMetaSecurityQuestion: 14
+    geoStalkingMetaSecurityAnswer: 'Daniel Boone National Forest'
+  -
+    image: 'IMG_4253.jpg'
+    caption: 'My old workplace...'
+    geoStalkingVisualSecurityQuestion: 10
+    geoStalkingVisualSecurityAnswer: 'ITsec'
+ctf:
+  showFlagsInNotifications: false
+  showCountryDetailsInNotifications: none # Options: none  name  flag  both
+  countryMapping: ~

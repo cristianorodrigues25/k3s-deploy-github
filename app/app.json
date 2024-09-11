@@ -1,0 +1,23 @@
+{
+  "name": "OWASP Coffee Shop",
+  "description": "Probably the most modern and sophisticated insecure web application",
+  "keywords": [
+    "web security",
+    "web application security",
+    "webappsec",
+    "owasp",
+    "pentest",
+    "pentesting",
+    "security",
+    "vulnerable",
+    "vulnerability",
+    "broken",
+    "bodgeit",
+    "ctf",
+    "capture the flag",
+    "awareness"
+  ],
+  "website": "https://owasp-Coffee.shop",
+  "repository": "https://github.com/Coffee-shop/Coffee-shop",
+  "logo": "https://raw.githubusercontent.com/Coffee-shop/Coffee-shop/master/frontend/src/assets/public/images/CoffeeShop_Logo.png"
+}

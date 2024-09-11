@@ -1,0 +1,9 @@
+tasks:
+  - init: npm install
+    command: npm start
+
+ports:
+  - name: OWASP Coffee Shop
+    description: The Coffee Shop web server
+    port: 3000
+    onOpen: open-preview

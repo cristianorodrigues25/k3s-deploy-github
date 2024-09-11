@@ -1,0 +1,37 @@
+---
+- hosts: master
+  become: yes
+  tasks:
+    - name: Install k3s master with TLS
+      shell: |
+        curl -sfL https://get.k3s.io | sh -s - server --cluster-init \
+        --tls-san {{ hostvars['node01'].ansible_host }} \
+        --write-kubeconfig-mode 644 \
+        --node-ip {{ ansible_default_ipv4.address }} \
+        --node-external-ip {{ ansible_default_ipv4.address }} \
+        --flannel-iface {{ ansible_default_ipv4.interface }}
+
+    - name: Get k3s token
+      shell: cat /var/lib/rancher/k3s/server/node-token
+      register: k3s_token
+      delegate_to: node01
+      become: yes
+
+    - name: Wait for k3s server to be ready
+      shell: kubectl get nodes
+      register: output
+      until: output.rc == 0
+      retries: 10
+      delay: 15
+
+- hosts: agents
+  become: yes
+  tasks:
+    - name: Install k3s agent with TLS
+      shell: |
+        curl -sfL https://get.k3s.io | K3S_TOKEN={{ hostvars['node01']['k3s_token']['stdout'] }} \
+        K3S_URL=https://{{ hostvars['node01'].ansible_host }}:6443 \
+        sh -s - agent \
+        --node-ip {{ ansible_default_ipv4.address }} \
+        --node-external-ip {{ ansible_default_ipv4.address }} \
+        --flannel-iface {{ ansible_default_ipv4.interface }}
