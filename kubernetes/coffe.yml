@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: coffe-shop
-          image: ghcr.io/cristianorodrigues25/k3s-deploy-github/refs/heads/main:latest
+          image: cristianorr25/coffe-shop:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
