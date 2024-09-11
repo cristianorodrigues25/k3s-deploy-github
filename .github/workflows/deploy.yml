@@ -33,6 +33,9 @@ jobs:
 
   build-and-deploy:
           runs-on: ubuntu-latest
+          permissions:
+            contents: read
+            packages: write
       
           steps:
             - name: Checkout code
@@ -45,6 +48,7 @@ jobs:
               run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin              
       
             - name: Build and push Docker image
+              
               working-directory: ./app
               run: |
                 DOCKER_BUILDKIT=1 docker build -t ghcr.io/${{ env.CI_REGISTRY_IMAGE }}/${{ github.ref }} .
